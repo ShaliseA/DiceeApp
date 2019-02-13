@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let diceArray = ["dice1", "dice2", "dice3", "dice4", "dice5", "dice6"] //this array will hold the name of all of the dice images and remember that arrays start from 0
+    
     var randomDiceIndex1: Int = 0
     var randomDiceIndex2: Int = 0
     //create random number genderator and then use that to randomize dice images
@@ -30,6 +32,12 @@ class ViewController: UIViewController {
         randomDiceIndex2 = Int.random(in: 0 ... 5)
         
         print(randomDiceIndex1)
+        
+        
+        diceImageView1.image = UIImage(named: diceArray[randomDiceIndex1]) //setting the image property here--everything in between the code bloack of IBAction is executed when we press the Roll Button--putting in in diceArray[] accesses the 2nd element of diceArray which is a string "dice2"
+        
+        diceImageView2.image = UIImage(named: diceArray[randomDiceIndex2])
+        
     }
     
 }
