@@ -34,6 +34,11 @@ class ViewController: UIViewController {
         
     }
     
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) { //trigered when motion is detected and ended
+        //we want to change dice images
+        updateDiceImages()  //in simulator, click on hardware and then click on shake gestures to test it out.
+    }
+    
     func updateDiceImages() {
         //what should happen when the roll button is pressed
         randomDiceIndex1 = Int.random(in: 0 ... 5) //create new whole numbers from 0 to 5 (up to and including 5)
