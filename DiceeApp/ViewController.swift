@@ -23,15 +23,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        updateDiceImages()
     }
 
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
+        
+        updateDiceImages()
+        
+    }
+    
+    func updateDiceImages() {
         //what should happen when the roll button is pressed
         randomDiceIndex1 = Int.random(in: 0 ... 5) //create new whole numbers from 0 to 5 (up to and including 5)
         randomDiceIndex2 = Int.random(in: 0 ... 5)
         
-        print(randomDiceIndex1)
+        // print(randomDiceIndex1)
         
         
         diceImageView1.image = UIImage(named: diceArray[randomDiceIndex1]) //setting the image property here--everything in between the code bloack of IBAction is executed when we press the Roll Button--putting in in diceArray[] accesses the 2nd element of diceArray which is a string "dice2"
